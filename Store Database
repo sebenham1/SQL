@@ -1,0 +1,24 @@
+-- Create a store database for Break Into Tech class
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, quantity INTEGER, rating INTEGER);
+
+INSERT INTO store VALUES (1, "Tshirt", 10, 400, 15);
+INSERT INTO store VALUES (2, "Jeans", 15, 200, 14);
+INSERT INTO store VALUES (3, "Shoes", 8, 230, 13);
+INSERT INTO store VALUES (4, "Ties", 3, 150, 12);
+INSERT INTO store VALUES (5, "Socks", 4, 400, 11);
+INSERT INTO store VALUES (6, "Undies", 10, 300, 10);
+INSERT INTO store VALUES (7, "Bras", 15, 330, 9);
+INSERT INTO store VALUES (8, "Tank Tops", 9, 900, 8);
+INSERT INTO store VALUES (9, "Overalls", 35, 220, 7);
+INSERT INTO store VALUES (10, "Jumpsuits", 41, 700, 6);
+INSERT INTO store VALUES (11, "Sweaters", 28, 425, 5);
+INSERT INTO store VALUES (12, "Joggers", 18, 315, 4);
+INSERT INTO store VALUES (13, "Hoodies", 22, 400, 3);
+INSERT INTO store VALUES (14, "Skirts", 17, 200, 2);
+INSERT INTO store VALUES (15, "Shorts", 15, 175, 1);
+
+SELECT * FROM store ORDER BY rating DESC;
+
+--display total quantity of items in store
+SELECT SUM(quantity) FROM store

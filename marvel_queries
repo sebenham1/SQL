@@ -1,3 +1,5 @@
+-- Some fun queries from class
+
 /* Marvel Heroes and Villains
  Based on the website http://marvel.wikia.com/Main_Page
  with popularity data from http://observationdeck.io9.com/something-i-found-marvel-character-popularity-poll-cb-1568108064 
@@ -46,3 +48,27 @@ INSERT INTO marvels VALUES(23, "Ghost Rider", 86, "Good", "Male", 1.88, 99, "EUA
 INSERT INTO marvels VALUES(24, "Venon", 78, "Neutral", "Male", 1.90, 118, "EUA", 3, 4, 2, 6, 1, 4);
 INSERT INTO marvels VALUES(25, "Juggernaut", 76, "Neutral", "Male", 2.87, 862, "EUA", 2, 7, 2, 7, 1, 4);
 INSERT INTO marvels VALUES(26, "Professor X", 58, "Good", "Male", 1.83, 86, "EUA", 5, 2, 2, 2, 5, 3);
+
+
+SELECT * FROM marvels;
+
+SELECT COUNT(*), 
+    CASE
+        WHEN popularity < 20 THEN "Most Popular"
+        WHEN popularity < 40 THEN "Less Popular"
+        ELSE "Not So Popular"
+    END as "Popularity Rank"
+FROM marvels
+GROUP BY "Popularity Rank";
+
+SELECT alignment
+FROM marvels
+GROUP BY alignment;
+
+SELECT * from marvels
+WHERE popularity >20 AND weight_kg < 100;
+
+
+SELECT name, height_m FROM marvels;
+
+SELECT ROUND(AVG(height_m), 2) AS average_height FROM marvels;
